@@ -13,5 +13,8 @@ namespace ServiceContracts
 		[OperationContract]
 		void AddUser(string username, string password);
 
+		[OperationContract]
+		void TestConnection();
+
 	}
 }

@@ -29,5 +29,17 @@ namespace Client
                 Console.WriteLine("Error: {0}", e.Message);
             }
         }
+
+        public void TestConnection()
+        {
+            try
+            {
+                factory.TestConnection();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: {0}", e.Message);
+            }
+        }
     }
 }

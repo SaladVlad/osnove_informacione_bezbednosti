@@ -13,10 +13,14 @@ namespace Client
 		{
 			NetTcpBinding binding = new NetTcpBinding();
 			string address = "net.tcp://localhost:9999/SecurityService";
- 
-			using (ClientProxy proxy = new ClientProxy(binding, address))
-			{
 
+            binding.Security.Mode = SecurityMode.Transport;
+            binding.Security.Transport.ClientCredentialType = TcpClientCredentialType.Windows;
+            binding.Security.Transport.ProtectionLevel = System.Net.Security.ProtectionLevel.EncryptAndSign;
+
+            using (ClientProxy proxy = new ClientProxy(binding, address))
+			{
+				proxy.TestConnection();
 			}
 
 			Console.ReadLine();

@@ -19,5 +19,10 @@ namespace SecurityService
 			throw new NotImplementedException();
 		}
 
+		public void TestConnection()
+		{
+			Console.WriteLine("Testing connection successful, you can do other tasks now :)");
+		}
+
 	}
 }
